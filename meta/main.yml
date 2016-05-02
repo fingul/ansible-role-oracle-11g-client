@@ -3,12 +3,14 @@ galaxy_info:
   author: fingul
   company: "your company (optional)"
   description: "oracle 11g client"
-  license: "license (GPLv2, CC-BY, etc)"
+  license: "license (MIT)"
   min_ansible_version: 1.2
   platforms:
     - name: Ubuntu
       versions:
         - trusty
+  galaxy_tags: ['oracle','client']
+  dependencies: []
 #galaxy_info:
 #  author: your name
 #  description:
