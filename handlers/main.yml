@@ -1,0 +1,6 @@
+---
+- name: reload ldconfig
+  shell: /sbin/ldconfig
+- name: reload path
+  shell: . /etc/profile.d/oracle.sh
+

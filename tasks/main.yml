@@ -1,0 +1,18 @@
+- name: unarchive - oracle:basic
+  unarchive: src=instantclient-basic-linux.x64-11.2.0.4.0.zip dest=/opt/ creates=/opt/instantclient_11_2/BASIC_README
+- name: unarchive - oracle:sdk
+  unarchive: src=instantclient-sdk-linux.x64-11.2.0.4.0.zip dest=/opt/ creates=/opt/instantclient_11_2/sdk/
+- name: unarchive - oracle:sqlplus
+  unarchive: src=instantclient-sqlplus-linux.x64-11.2.0.4.0.zip dest=/opt/ creates=/opt/instantclient_11_2/sqlplus
+- name: create link libclntsh.so
+  file: src=/opt/instantclient_11_2/libclntsh.so.11.1 dest=/opt/instantclient_11_2/libclntsh.so state=link
+- name: copy /etc/ld.so.conf.d/oracle.conf
+  copy: src=oracle.conf dest=/etc/ld.so.conf.d/oracle.conf
+- name: copy /etc/profile.d/oracle.sh
+  copy: src=oracle.sh dest=/etc/profile.d/oracle.sh
+- name: reload ldconfig
+  shell: /sbin/ldconfig
+- name: reload path
+  shell: . /etc/profile.d/oracle.sh
+
+
