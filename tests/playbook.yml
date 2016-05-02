@@ -1,5 +1,7 @@
 ---
 - hosts: localhost
   remote_user: root
-  roles:
-    - fingul/ansible-role-oracle-11g-client
+  tasks:
+
+#  roles:
+#    - fingul.oracle-11g-client

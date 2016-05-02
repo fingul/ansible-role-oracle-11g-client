@@ -1,4 +1,4 @@
 # install_roles.yml
 
 # from galaxy
-- src: fingul/ansible-role-oracle-11g-client
+- src: fingul.oracle-11g-client
