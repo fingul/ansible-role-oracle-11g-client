@@ -1,16 +1,21 @@
 ---
+dependencies: []
+
 galaxy_info:
-  author: "fingul"
-  company: "your company (optional)"
-  description: "oracle 11g client"
-  license: "license (MIT)"
-  min_ansible_version: 1.2
+  author: fingul
+  description: oracle 11g client for Debian/Ubuntu.
+  company: "fingul"
+  license: "license (BSD, MIT)"
+  min_ansible_version: 1.9
   platforms:
     - name: Ubuntu
       versions:
-        - trusty
-  galaxy_tags: ['oracle','client']
-dependencies: []
+      - all
+    - name: Debian
+      versions:
+      - all
+  galaxy_tags:
+    - database
 #galaxy_info:
 #  author: your name
 #  description:
