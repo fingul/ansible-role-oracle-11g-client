@@ -13,6 +13,6 @@ RUN echo localhost > inventory
 
 # ==> Executing Ansible...
 
-#RUN ansible-galaxy install -r install_roles.yml
+RUN ansible-galaxy install -r install_roles.yml
 
-RUN ansible-playbook -i inventory playbook.yml --connection=local --sudo
+RUN ansible-playbook -i inventory playbook.yml --connection=local --sudo #

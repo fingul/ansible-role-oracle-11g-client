@@ -2,6 +2,6 @@
 - hosts: localhost
   remote_user: root
   tasks:
-
-#  roles:
-#    - fingul.oracle-11g-client
+    -
+  roles:
+    - fingul.oracle-11g-client
