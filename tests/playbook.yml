@@ -2,4 +2,4 @@
 - hosts: localhost
   remote_user: root
   roles:
-    - ansible-role-oracle-11g-client
+    - fingul/ansible-role-oracle-11g-client
