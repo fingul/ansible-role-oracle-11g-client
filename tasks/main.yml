@@ -1,4 +1,10 @@
-- apt: name=unzip update_cache=yes
+- name: install required packages
+  apt: name={{item}} state=present update_cache=yes cache_valid_time=3600
+  with_items:
+    #http client
+    - unzip
+    #cx_oracle requirement
+    - libaio-dev
 - name: unarchive - oracle:basic
   unarchive: src=instantclient-basic-linux.x64-11.2.0.4.0.zip dest=/opt/ creates=/opt/instantclient_11_2/BASIC_README
 - name: unarchive - oracle:sdk
@@ -15,5 +21,5 @@
   shell: /sbin/ldconfig
 - name: reload path
   shell: . /etc/profile.d/oracle.sh
-
-
+- name: create link
+  file: src="/opt/instantclient_11_2/sqlplus" dest="/usr/local/bin/sqlplus" state=link
